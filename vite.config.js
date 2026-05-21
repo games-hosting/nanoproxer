@@ -3,6 +3,7 @@ import { dreamlandPlugin } from "vite-plugin-dreamland";
 import { ChemicalVitePlugin } from "chemicaljs";
 
 export default defineConfig({
+    base: "/nanoproxer/",
     plugins: [
         ChemicalVitePlugin({
             scramjet: false,
