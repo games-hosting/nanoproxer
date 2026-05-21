@@ -27,18 +27,16 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install PNPM Package Manager
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+        uses: pnpm/action-setup@v4
 
       - name: Install Code Dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Compile Static Proxy Files
-        run: pnpm run build-static
+        run: pnpm run build
 
       - name: Upload Built Site Artifact
         uses: actions/upload-pages-artifact@v3
